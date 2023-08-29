@@ -1,10 +1,12 @@
-#ifndef SINGLY_LINKED_LIST_H
-# define SINGLY_LINKED_LIST_H
+#ifndef SINGLY_LINKED_LIST
+# define SINGLY_LINKED_LIST
+
+# define INFINITY 1
 
 typedef struct  sll
 {
-  char  *payload;
-  int   *next;
+  char			*payload;
+  struct sll	*next;
 } sll;
 
 #endif
