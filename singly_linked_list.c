@@ -1,22 +1,15 @@
 #include "./singly_linked_list.h"
-#include <stdio.h>
 
-int main(void)
+void	traverse(sll list, int (*process)(sll))
 {
-	sll	singly_linked_list;
-	sll	traverser;
+	sll	node;
 
-	sll	next;
-	next.payload = " World!";
-	next.next = 0;
-	singly_linked_list.payload = "Hello,";
-	singly_linked_list.next = &next;
-	traverser = singly_linked_list;
+	node = list;
 	while (INFINITY)
 	{
-		printf("%s", traverser.payload);
-		if (!traverser.next)
+		process(node);
+		if (node.next == NULL)
 			break;
-		traverser = *traverser.next;
+		node = *node.next;
 	}
 }
