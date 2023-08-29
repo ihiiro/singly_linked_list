@@ -10,6 +10,7 @@ typedef struct  sll
   	struct sll		*next;
 }	sll;
 
-void	traverse(sll list, int (*process)(sll));
+void	traverse(sll list, void (*process)(sll));
+void	append(sll *list, char *payload);
 
 #endif
