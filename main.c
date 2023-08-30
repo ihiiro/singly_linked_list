@@ -2,7 +2,7 @@
 #include <unistd.h>
 #include <stdio.h>
 
-void	ft_putstr(sll node)
+void	ft_putstr(sll_t node)
 {
 	int	i;
 
@@ -12,30 +12,18 @@ void	ft_putstr(sll node)
 		write(1, &node.payload[i], 1);
 		i++;
 	}
-}
-
-int	count = 0;
-void	counter()
-{
-	count++;
+	if (node.payload[0] && node.next)
+		write(1, ", ", 2);
 }
 
 int	main(void)
 {
-	sll	list;
+	sll_t	list = new_list();
 
-	list.payload = NULL;
-	list.next = NULL;
-
-	// count should be 1 because there is 1 empty node initially
-	traverse(list, counter);
-	printf("%d\n", count);
-
-	// count should be 2 because we appended a node
-	traverse(list, counter);
-	traverse(list, counter);
-	traverse(list, counter);
-	append(&list, "new node");
-	traverse(list, counter);
-	printf("%d", count);
+	printf("initial state length: %d nodes.\n\n", list.length);
+	append(&list, "first node");
+	append(&list, "second node");
+	append(&list, "third node");
+	printf("after appending 3 nodes: %d nodes.\n\n", list.length);
+	traverse(list, ft_putstr);
 }

@@ -3,14 +3,17 @@
 
 # define INFINITY 1
 # define NULL 0
+# define NULL_STRING ""
 
-typedef struct  sll
+typedef struct  sll_t
 {
+	struct sll_t	*next;
 	char			*payload;
-  	struct sll		*next;
-}	sll;
+	int				length;
+}	sll_t;
 
-void	traverse(sll list, void (*process)(sll));
-void	append(sll *list, char *payload);
+void	traverse(sll_t list, void (*process)(sll_t));
+void	append(sll_t *list, char *payload);
+sll_t	new_list();
 
 #endif

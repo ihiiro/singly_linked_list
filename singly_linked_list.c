@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-void	traverse(sll list, void (*process)(sll))
+void	traverse(sll_t list, void (*process)(sll_t))
 {
-	sll	node;
+	sll_t	node;
 
 	if (process == NULL)
 		return;
@@ -18,17 +18,17 @@ void	traverse(sll list, void (*process)(sll))
 	}
 }
 
-void	append(sll *list, char *payload)
+void	append(sll_t *list, char *payload)
 {
-	sll	*node;
-	sll	*new_node;
+	sll_t	*node;
+	sll_t	*new_node;
 
 	node = list;
 	while (INFINITY)
 	{
 		if (node->next == NULL)
 		{
-			new_node = (sll *)malloc(sizeof(sll));
+			new_node = (sll_t *)malloc(sizeof(sll_t));
 			new_node->payload = (char *)malloc(strlen(payload) + 1);
 			strcpy(new_node->payload, payload);
 			new_node->next = NULL;
@@ -37,4 +37,15 @@ void	append(sll *list, char *payload)
 		}
 		node = node->next;
 	}
+	list->length++;
+}
+
+sll_t	new_list()
+{
+	sll_t	safe_list;
+
+	safe_list.payload = NULL_STRING;
+	safe_list.next = NULL;
+	safe_list.length = 0;
+	return (safe_list);
 }
