@@ -7,9 +7,10 @@
 
 typedef struct  sll_t
 {
-	struct sll_t	*next;
 	char			*payload;
 	int				length;
+	int				size_in_bytes;
+	struct sll_t	*next;
 }	sll_t;
 
 void	traverse(sll_t list, void (*process)(sll_t));

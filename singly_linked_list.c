@@ -38,6 +38,7 @@ void	append(sll_t *list, char *payload)
 		node = node->next;
 	}
 	list->length++;
+	list->size_in_bytes = list->length * sizeof(sll_t);
 }
 
 sll_t	new_list()
@@ -46,6 +47,7 @@ sll_t	new_list()
 
 	safe_list.payload = NULL_STRING;
 	safe_list.next = NULL;
-	safe_list.length = 0;
+	safe_list.length = 1;
+	safe_list.size_in_bytes = sizeof(sll_t);
 	return (safe_list);
 }
