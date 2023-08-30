@@ -3,7 +3,6 @@
 
 # define INFINITY 1
 # define NULL 0
-# define NULL_STRING ""
 
 typedef struct  sll_t
 {

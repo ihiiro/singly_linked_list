@@ -45,7 +45,7 @@ sll_t	new_list()
 {
 	sll_t	safe_list;
 
-	safe_list.payload = NULL_STRING;
+	safe_list.payload = "HEAD NODE";
 	safe_list.next = NULL;
 	safe_list.length = 1;
 	safe_list.size_in_bytes = sizeof(sll_t);
