@@ -32,6 +32,8 @@ void	append(sll_t *list, char *payload)
 			new_node->payload = (char *)malloc(strlen(payload) + 1);
 			strcpy(new_node->payload, payload);
 			new_node->next = NULL;
+			new_node->length = 0;
+			new_node->size_in_bytes = 0;
 			node->next = new_node;
 			break;
 		}

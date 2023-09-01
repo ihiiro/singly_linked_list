@@ -2,7 +2,6 @@
 # define SINGLY_LINKED_LIST_H
 
 # define INFINITY 1
-# define NULL 0
 
 typedef struct  sll_t
 {
