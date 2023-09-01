@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-void	traverse(sll_t list, void (*process)(sll_t))
+void	traverse(sll_t *list, void (*process)(sll_t *))
 {
-	sll_t	node;
+	sll_t	*node;
 
 	if (process == NULL)
 		return;
@@ -12,9 +12,9 @@ void	traverse(sll_t list, void (*process)(sll_t))
 	while (INFINITY)
 	{
 		process(node);
-		if (node.next == NULL)
+		if (node->next == NULL)
 			break;
-		node = *node.next;
+		node = node->next;
 	}
 }
 

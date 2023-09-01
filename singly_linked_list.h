@@ -12,7 +12,7 @@ typedef struct  sll_t
 	struct sll_t	*next;
 }	sll_t;
 
-void	traverse(sll_t list, void (*process)(sll_t));
+void	traverse(sll_t *list, void (*process)(sll_t *));
 void	append(sll_t *list, char *payload);
 sll_t	new_list();
 
