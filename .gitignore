@@ -1,1 +1,3 @@
-a.out
+bin/sll
+bin/sll.a
+srcs/singly_linked_list.o
