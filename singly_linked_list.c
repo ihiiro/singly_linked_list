@@ -21,14 +21,16 @@ void	append(sll_t *list, char *payload)
 	sll_t	*node;
 	sll_t	*new_node;
 	int		payload_size;
+	int		sll_t_size;
 
 	node = list;
 	payload_size = strlen(payload) + 1;
+	sll_t_size = sizeof(sll_t);
 	while (node->next)
 	{
 		node = node->next;
 	}
-	new_node = (sll_t *)malloc(sizeof(sll_t));
+	new_node = (sll_t *)malloc(sll_t_size);
 	new_node->payload = (char *)malloc(payload_size);
 	strcpy(new_node->payload, payload);
 	new_node->next = NULL;
@@ -36,7 +38,7 @@ void	append(sll_t *list, char *payload)
 	new_node->size_in_bytes = 0;
 	node->next = new_node;
 	list->length++;
-	list->size_in_bytes += sizeof(sll_t) +
+	list->size_in_bytes += sll_t_size +
 			payload_size;
 }
 
