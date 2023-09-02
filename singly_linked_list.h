@@ -1,8 +1,6 @@
 #ifndef SINGLY_LINKED_LIST_H
 # define SINGLY_LINKED_LIST_H
 
-# define INFINITY 1
-
 typedef struct  sll_t
 {
 	char			*payload;
@@ -11,8 +9,9 @@ typedef struct  sll_t
 	struct sll_t	*next;
 }	sll_t;
 
+sll_t	new_list();
 void	traverse(sll_t *list, void (*process)(sll_t *));
 void	append(sll_t *list, char *payload);
-sll_t	new_list();
+void	free_sll(sll_t *list);
 
 #endif

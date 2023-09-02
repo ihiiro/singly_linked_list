@@ -26,8 +26,12 @@ int	main(void)
 	append(&list, "FIRST NODE");
 	append(&list, "SECOND NODE");
 	append(&list, "THIRD NODE");
-	printf("after appending 3 nodes: [%d nodes] [%d bytes].\n\n",
+	append(&list, "FOURTH NODE");
+	printf("after appending 4 nodes: [%d nodes] [%d bytes].\n\n",
 			list.length, list.size_in_bytes);
 	printf("traversing...\n\n");
 	traverse(&list, ft_putstr);
+	printf("\n\nfreeing...");
+	free_sll(&list);
+	printf("done.");
 }

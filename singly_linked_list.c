@@ -9,11 +9,9 @@ void	traverse(sll_t *list, void (*process)(sll_t *))
 	if (process == NULL)
 		return;
 	node = list;
-	while (INFINITY)
+	while (node)
 	{
 		process(node);
-		if (node->next == NULL)
-			break;
 		node = node->next;
 	}
 }
@@ -24,21 +22,17 @@ void	append(sll_t *list, char *payload)
 	sll_t	*new_node;
 
 	node = list;
-	while (INFINITY)
+	while (node->next)
 	{
-		if (node->next == NULL)
-		{
-			new_node = (sll_t *)malloc(sizeof(sll_t));
-			new_node->payload = (char *)malloc(strlen(payload) + 1);
-			strcpy(new_node->payload, payload);
-			new_node->next = NULL;
-			new_node->length = 0;
-			new_node->size_in_bytes = 0;
-			node->next = new_node;
-			break;
-		}
 		node = node->next;
 	}
+	new_node = (sll_t *)malloc(sizeof(sll_t));
+	new_node->payload = (char *)malloc(strlen(payload) + 1);
+	strcpy(new_node->payload, payload);
+	new_node->next = NULL;
+	new_node->length = 0;
+	new_node->size_in_bytes = 0;
+	node->next = new_node;
 	list->length++;
 	list->size_in_bytes += sizeof(sll_t) +
 			strlen(payload) + 1;
@@ -54,4 +48,18 @@ sll_t	new_list()
 	safe_list.size_in_bytes = sizeof(sll_t) +
 			strlen(safe_list.payload) + 1;
 	return (safe_list);
+}
+
+void	free_sll(sll_t *list)
+{
+	sll_t	*next_head;
+
+	list = list->next;
+	while (list)
+	{
+		next_head = list->next;
+		free(list->payload);
+		free(list);
+		list = next_head;
+	}
 }
