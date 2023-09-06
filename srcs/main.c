@@ -19,8 +19,9 @@ void	ft_putstr(sll_t *node)
 
 int	main(void)
 {
-	sll_t	list = new_list();
+	sll_headnode_t	list;
 
+	list = new_list();
 	printf("initial state: [%d node] [%d bytes].\n\n", list.length,
 			list.size_in_bytes);
 	append(&list, "FIRST NODE");
