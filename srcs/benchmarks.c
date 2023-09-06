@@ -1,3 +1,8 @@
+/*
+	Implementation of a singly linked list in c.
+	My github: https://github.com/ihiiro
+*/
+
 #include "../includes/singly_linked_list.h"
 #include <time.h>
 #include <stdio.h>

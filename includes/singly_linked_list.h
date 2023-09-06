@@ -1,3 +1,8 @@
+/*
+	Implementation of a singly linked list in c.
+	My github: https://github.com/ihiiro
+*/
+
 #ifndef SINGLY_LINKED_LIST_H
 # define SINGLY_LINKED_LIST_H
 
