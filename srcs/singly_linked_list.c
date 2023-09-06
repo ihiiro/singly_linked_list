@@ -1,3 +1,9 @@
+/*
+	Implementation of a singly linked list in c.
+	By: Yassir Elyaqine (ihiiro) in 2023
+	Email: yassirelyakine@gmail.com
+*/
+
 #include "../includes/singly_linked_list.h"
 #include <stdlib.h>
 #include <string.h>
