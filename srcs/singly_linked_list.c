@@ -8,7 +8,7 @@ void	traverse(sll_headnode_t *list, void (*process)(sll_t *))
 
 	if (process == NULL)
 		return;
-	node = list->next;
+	node = list->next; // skip headnode
 	while (node)
 	{
 		process(node);
@@ -58,7 +58,7 @@ void	free_sll(sll_headnode_t *list)
 	sll_t	*next_head;
 	sll_t	*traverser;
 
-	traverser = list->next;
+	traverser = list->next; // skip headnode (not in heap)
 	while (traverser)
 	{
 		next_head = traverser->next;

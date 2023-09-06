@@ -4,11 +4,12 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 OFILES = ${CFILES:.c=.o}
 LIB = ./bin/sll.a
-EXEC = ./bin/sll
+DEMO = ./bin/sll
+BENCHMARKS = ./bin/bm
 
 .PHONY: all clean fclean re
 
-all: ${LIB} ${EXEC}
+all: ${LIB} ${DEMO} ${BENCHMARKS}
 
 ${LIB}: ${OFILES}
 	ar rcs $@ $<
@@ -16,14 +17,18 @@ ${LIB}: ${OFILES}
 ${OFILES}: ${CFILES}
 	${CC} ${CFLAGS} -c $< -o $@
 
-${EXEC}: ${LIB}
+${DEMO}: ${LIB}
 	${CC} ${CFLAGS} ./srcs/main.c $< -o $@
+
+${BENCHMARKS}: ${LIB}
+	${CC} ${CFLAGS} ./srcs/benchmarks.c $< -o $@
 
 clean:
 	rm ${OFILES}
 
 fclean: clean
 	rm ${LIB}
-	rm ${EXEC}
+	rm ${DEMO}
+	rm ${BENCHMARKS}
 
 re: fclean all
