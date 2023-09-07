@@ -1,11 +1,15 @@
 # Singly Linked List
 
 ## Memory safety: excerpt from valgrind output:
+
+
 ```
 ==4699== All heap blocks were freed -- no leaks are possible
 ```
 
 ## Executable ran on:
+
+
 Operating System: Kali GNU/Linux Rolling x86_64
 
 Hostname: HP 255 G3 Notebook PC
@@ -30,6 +34,13 @@ free_sll() (free 1,000,000 nodes)                               0.134713s
 ```
 
 ## API
+
+
+```c
+sll_headnode_t	new_list(void);
+```
+list constructor, here for your own safety, returns an sll_t with only the head node.
+
 ```c
 void	traverse(sll_headnode_t *list, void (*process)(sll_t *));
 ```
@@ -39,11 +50,6 @@ traverses the list, applying `process` to each node.
 void	append(sll_headnode_t *list, char *payload);
 ```
 appends a new node to the list.
-
-```c
-sll_headnode_t	new_list(void);
-```
-list constructor, here for your own safety, returns an sll_t with only the head node.
 
 ```c
 void	free_sll(sll_headnode_t *list);
