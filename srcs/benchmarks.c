@@ -7,6 +7,15 @@
 #include <time.h>
 #include <stdio.h>
 
+void	strllen(sll_t *node)
+{
+	int	i;
+
+	i = 0;
+	while (node->payload[i])
+		i++;
+}
+
 int	main(void)
 {
 	sll_headnode_t	list;
@@ -25,14 +34,13 @@ int	main(void)
 	i = 0;
 	start = clock();
 	while (i++ < tries)
-		append(&list, "node");
+		append(&list, "some new node");
 	printf("append() (1,000,000 calls)\t\t\t\t\t%fs\n",
 			((double)(clock() - start)) / CLOCKS_PER_SEC);
 	i = 0;
 	start = clock();
-	while (i++ < tries)
-		traverse(&list, NULL);
-	printf("traverse() (traverse 1,000,000 nodes 1,000,000 times)\t\t%fs\n",
+	traverse(&list, strllen);
+	printf("traverse() (traverse 1,000,000 nodes, process=strllen)\t\t%fs\n",
 			((double)(clock() - start)) / CLOCKS_PER_SEC);
 	i = 0;
 	start = clock();

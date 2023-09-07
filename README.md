@@ -24,10 +24,10 @@ Calculated using: `time.h`'s `clock()` and `CLOCKS_PER_SEC`
 ```
 Benchmark for singly linked list
 
-new_list() (1,000,000 calls)                                    0.033304s
-append() (1,000,000 calls)                                      0.473783s
-traverse() (traverse 1,000,000 nodes 1,000,000 times)           0.015447s
-free_sll() (free 1,000,000 nodes)                               0.134713s  
+new_list() (1,000,000 calls)                                    0.032957s
+append() (1,000,000 calls)                                      0.480136s
+traverse() (traverse 1,000,000 nodes, process=strllen)          0.098582s
+free_sll() (free 1,000,000 nodes)                               0.134015s 
 ```
 
 ## API
