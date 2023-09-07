@@ -4,7 +4,7 @@
 ==4699== All heap blocks were freed -- no leaks are possible
 ```
 
-## Executable ran on:
+## Benchmark environment:
 Operating System: Kali GNU/Linux Rolling x86_64
 
 Hostname: HP 255 G3 Notebook PC
