@@ -3,9 +3,9 @@ HEADERS = ./includes/singly_linked_list.h
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 OFILES = ${CFILES:.c=.o}
-LIB = ./bin/sll.a
-TESTS = ./bin/tests
-BENCHMARKS = ./bin/bm
+LIB = sll.a
+TESTS = tests
+BENCHMARKS = bm
 
 .PHONY: all clean fclean re
 

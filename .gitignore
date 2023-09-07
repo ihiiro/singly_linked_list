@@ -1,4 +1,4 @@
-bin/tests
-bin/sll.a
-bin/bm
+tests
+sll.a
+bm
 srcs/singly_linked_list.o
