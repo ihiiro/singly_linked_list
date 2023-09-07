@@ -32,7 +32,7 @@ free_sll() (free 1,000,000 nodes)                               0.134713s
 ```c
 sll_headnode_t	new_list(void);
 ```
-list constructor, here for your own safety, returns an sll_t with only the head node.
+list constructor, here for your own safety, returns an sll_headnode_t with only the head node.
 
 ```c
 void	traverse(sll_headnode_t *list, void (*process)(sll_t *));
