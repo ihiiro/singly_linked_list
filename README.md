@@ -19,7 +19,7 @@ GPU: AMD ATI Radeon HD 8210
 
 Memory: 3364 MiB total
 
-Calculated using: time.h's clock() and CLOCKS_PER_SEC
+Calculated using: `time.h`'s `clock()` and `CLOCKS_PER_SEC`
 
 ```
 Benchmark for singly linked list
