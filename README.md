@@ -32,6 +32,22 @@ free_sll() (free 1,000,000 nodes)                               0.134713s
 
 ## API
 ```c
+typedef struct	sll_t
+{
+	char			*payload;
+	struct sll_t	*next;
+}	sll_t;
+
+typedef struct  sll_headnode_t
+{
+	sll_t			*next;
+	sll_t			*tail;
+	int				length;
+	int				size_in_bytes;
+}	sll_headnode_t;
+```
+
+```c
 sll_headnode_t	new_list(void);
 ```
 list constructor, here for your own safety, returns an sll_headnode_t.
