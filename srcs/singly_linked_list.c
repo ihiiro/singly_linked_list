@@ -53,8 +53,8 @@ sll_headnode_t	new_list(void)
 
 	safe_list.next = NULL;
 	safe_list.tail = NULL;
-	safe_list.length = 1;
-	safe_list.size_in_bytes = sizeof(sll_headnode_t);
+	safe_list.length = 0;
+	safe_list.size_in_bytes = 0;
 	return (safe_list);
 }
 
@@ -71,4 +71,8 @@ void	free_sll(sll_headnode_t *list)
 		free(traverser);
 		traverser = next_head;
 	}
+	list->length = 0;
+	list->size_in_bytes = 0;
+	list->tail = NULL;
+	list->next = NULL;
 }

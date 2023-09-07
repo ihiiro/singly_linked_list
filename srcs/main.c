@@ -40,4 +40,6 @@ int	main(void)
 	printf("\n\nfreeing...");
 	free_sll(&list);
 	printf("done.");
+
+	printf("\n\n%d", list.size_in_bytes);
 }
