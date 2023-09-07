@@ -31,12 +31,12 @@ free_sll() (free 1,000,000 nodes)                               0.134713s
 
 ## API
 ```c
-void			traverse(sll_headnode_t *list, void (*process)(sll_t *));
+void	traverse(sll_headnode_t *list, void (*process)(sll_t *));
 ```
 traverses the list, applying `process` to each node.
 
 ```c
-void			append(sll_headnode_t *list, char *payload);
+void	append(sll_headnode_t *list, char *payload);
 ```
 appends a new node to the list.
 
@@ -46,6 +46,6 @@ sll_headnode_t	new_list(void);
 list constructor, here for your own safety, returns an sll_t with only the head node.
 
 ```c
-void			free_sll(sll_headnode_t *list);
+void	free_sll(sll_headnode_t *list);
 ```
 frees the entire list.
