@@ -1,4 +1,4 @@
-CFILES = srcs/traversers.c srcs/updaters.c
+CFILES = srcs/traversers.c srcs/non_traversers.c
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 OFILES = ${CFILES:.c=.o}
