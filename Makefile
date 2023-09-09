@@ -1,5 +1,4 @@
-CFILES = ./srcs/singly_linked_list.c
-HEADERS = ./includes/singly_linked_list.h
+CFILES = srcs/traversers.c srcs/updaters.c
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 OFILES = ${CFILES:.c=.o}
@@ -12,16 +11,16 @@ BENCHMARKS = bm
 all: ${LIB} ${TESTS} ${BENCHMARKS}
 
 ${LIB}: ${OFILES}
-	ar rcs $@ $<
+	ar rcs $@ $^
 
-${OFILES}: ${CFILES}
+%.o: %.c
 	${CC} ${CFLAGS} -c $< -o $@
 
 ${TESTS}: ${LIB}
-	${CC} ${CFLAGS} ./srcs/tests.c $< -o $@
+	${CC} ${CFLAGS} srcs/tests.c $< -o $@
 
 ${BENCHMARKS}: ${LIB}
-	${CC} ${CFLAGS} ./srcs/benchmarks.c $< -o $@
+	${CC} ${CFLAGS} srcs/benchmarks.c $< -o $@
 
 clean:
 	rm ${OFILES}

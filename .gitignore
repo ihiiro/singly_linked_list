@@ -1,4 +1,4 @@
 tests
 sll.a
 bm
-srcs/singly_linked_list.o
+srcs/*.o
