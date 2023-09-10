@@ -2,3 +2,5 @@ tests
 sll.a
 bm
 srcs/*.o
+.stamp
+.stamplist
